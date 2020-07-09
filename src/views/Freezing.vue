@@ -1,8 +1,6 @@
 <template>
-  <div class="home">
-    <LeftSidebar></LeftSidebar>
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <FreezingList msg="Welcome to Your Vue.js App" />
+  <div>
+    <FreezingList></FreezingList>
   </div>
 </template>
 
@@ -11,7 +9,7 @@
 import FreezingList from "@/components/FreezingList.vue";
 
 export default {
-  name: "Home",
+  name: "Freezing",
   components: {
     FreezingList
   }

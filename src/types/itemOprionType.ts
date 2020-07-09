@@ -1,5 +1,5 @@
-export interface itemOptionType {
-  id?: number,
-  name?: string,
-  limit?: Date,
+export interface ItemOptionType {
+  id: number;
+  name?: string;
+  limit?: Date;
 }

@@ -1,44 +1,33 @@
 <template>
-  <div class="item">
-    <div class="flex-area">
-      <p>{{ option.name }}</p>
-      <p>{{ option.limit }}</p>
-    </div>
-    <div>
-      <button @click=""></button>
-    </div>
-  </div>
+  <v-toolbar>
+    <v-toolbar-title>{{ item.name }}</v-toolbar-title>
+    <v-spacer></v-spacer>
+    <v-toolbar-text>{{ item.limit }}</v-toolbar-text>
+    <v-btn @click="close">close</v-btn>
+  </v-toolbar>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { itemOptionType } from "@/types/itemOprionType";
+import { Component, Prop, Vue, Emit } from "vue-property-decorator";
+import { ItemOptionType } from "@/types/ItemOprionType";
 
 @Component
 export default class FreezingItem extends Vue {
-  @Prop()
-  private option!: itemOptionType;
+  @Prop({ default: null })
+  item!: ItemOptionType;
 
-  
+
+  @Emit("close")
+  close() {
+    console.log(this.item.id);
+    return this.item;
+  }
 }
 </script>
 
 <style scoped>
-.item {
-  margin-top: 12px;
-  background-color: #fff;
-  border: 1px solid #dadce0;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  padding: 24px;
-  padding-top: 22px;
+.flex-area {
   display: flex;
-  justify-content: space-between;
-}
-
-.flex-area{
-  display: flex;
-  flex-direction:  row;
-
+  flex-direction: row;
 }
 </style>
